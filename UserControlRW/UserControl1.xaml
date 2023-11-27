@@ -1,0 +1,67 @@
+<UserControl x:Class="UserControlRW.UserControl1"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:UserControlRW"
+             mc:Ignorable="d" 
+             d:DesignHeight="320" d:DesignWidth="150">
+    <GroupBox Header="Left Wheel" Background="White" Margin="5,0,0,0">
+        <StackPanel Orientation="Horizontal" Margin="0,15">
+            <Slider Orientation="Vertical" Minimum="-100" Maximum="100" Value="0" Name="sldValue" ValueChanged="sldValue_ValueChanged"></Slider>
+            <StackPanel Width="80">
+                <Button Height="30" Width="30" Name="btnUp" Click="btnUp_Click">
+                    <Image Source="C:\Users\Kevin\Desktop\23_24\MGIN-Sperrer\UserControlMobileRobotik\UserControlMobileRobotik\Ressources\fast-forward-button.jpg" Height="30" Width="30">
+                        <Image.LayoutTransform>
+                            <RotateTransform Angle="270"></RotateTransform>
+                        </Image.LayoutTransform>
+                    </Image>
+                </Button>
+                <ProgressBar Orientation="Vertical" Width="30" Height="100" Name="progressBarPositive">
+
+                </ProgressBar>
+                <Button Height="30" Width="30" Name="btnStop" Click="btnStop_Click">
+                    <Image Source="C:\Users\Kevin\Desktop\23_24\MGIN-Sperrer\UserControlMobileRobotik\UserControlMobileRobotik\Ressources\stopbutton.jpg" Height="30" Width="30"></Image>
+                </Button>
+                <ProgressBar Orientation="Vertical" Width="30" Height="100" Name="progressBarNegative" RenderTransformOrigin="0.5,0.5">
+                    <ProgressBar.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform/>
+                            <RotateTransform Angle="180"/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </ProgressBar.RenderTransform>
+
+
+                </ProgressBar>
+                <Button Height="30" Width="30" Name="btnDown" Click="btnDown_Click">
+                    <Image Source="C:\Users\Kevin\Desktop\23_24\MGIN-Sperrer\UserControlMobileRobotik\UserControlMobileRobotik\Ressources\fast-forward-button.jpg" Height="30" Width="30">
+                        <Image.LayoutTransform>
+                            <RotateTransform Angle="90"></RotateTransform>
+                        </Image.LayoutTransform>
+                    </Image>
+                </Button>
+            </StackPanel>
+
+            <StackPanel Width="38">
+                <Label Content="vorwaerts" Height="30" Width="60" Margin="1,35" >
+                    <Label.LayoutTransform>
+                        <RotateTransform Angle="90"/>
+                    </Label.LayoutTransform>
+                </Label>
+
+                <Label Name="lblActValue">0</Label>
+
+
+                <Label Content="rueckwaerts" Height="30" Width="80" Margin="1,20" >
+                    <Label.LayoutTransform>
+                        <RotateTransform Angle="90"/>
+                    </Label.LayoutTransform>
+                </Label>
+            </StackPanel>
+
+
+        </StackPanel>
+    </GroupBox>
+</UserControl>
